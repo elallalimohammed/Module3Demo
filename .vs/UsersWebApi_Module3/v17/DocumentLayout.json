@@ -1,0 +1,154 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{64602897-DC13-419E-B58F-62EB057410C2}|UsersWebApiTest_Module3\\UsersWebApiTest_Module3.csproj|c:\\users\\moal\\source\\repos\\userswebapi_module3\\userswebapitest_module3\\controllertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{64602897-DC13-419E-B58F-62EB057410C2}|UsersWebApiTest_Module3\\UsersWebApiTest_Module3.csproj|solutionrelative:userswebapitest_module3\\controllertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05232368-DF59-4787-A0BC-856564774771}|UsersWebApi_Module3\\UsersWebApi_Module3.csproj|c:\\users\\moal\\source\\repos\\userswebapi_module3\\userswebapi_module3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05232368-DF59-4787-A0BC-856564774771}|UsersWebApi_Module3\\UsersWebApi_Module3.csproj|solutionrelative:userswebapi_module3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05232368-DF59-4787-A0BC-856564774771}|UsersWebApi_Module3\\UsersWebApi_Module3.csproj|c:\\users\\moal\\source\\repos\\userswebapi_module3\\userswebapi_module3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05232368-DF59-4787-A0BC-856564774771}|UsersWebApi_Module3\\UsersWebApi_Module3.csproj|solutionrelative:userswebapi_module3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05232368-DF59-4787-A0BC-856564774771}|UsersWebApi_Module3\\UsersWebApi_Module3.csproj|c:\\users\\moal\\source\\repos\\userswebapi_module3\\userswebapi_module3\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05232368-DF59-4787-A0BC-856564774771}|UsersWebApi_Module3\\UsersWebApi_Module3.csproj|solutionrelative:userswebapi_module3\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{05232368-DF59-4787-A0BC-856564774771}|UsersWebApi_Module3\\UsersWebApi_Module3.csproj|c:\\users\\moal\\source\\repos\\userswebapi_module3\\userswebapi_module3\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{05232368-DF59-4787-A0BC-856564774771}|UsersWebApi_Module3\\UsersWebApi_Module3.csproj|solutionrelative:userswebapi_module3\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApiTest_Module3\\ControllerTests.cs",
+              "RelativeDocumentMoniker": "UsersWebApiTest_Module3\\ControllerTests.cs",
+              "ToolTip": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApiTest_Module3\\ControllerTests.cs",
+              "RelativeToolTip": "UsersWebApiTest_Module3\\ControllerTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T08:32:10.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApi_Module3\\Program.cs",
+              "RelativeDocumentMoniker": "UsersWebApi_Module3\\Program.cs",
+              "ToolTip": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApi_Module3\\Program.cs",
+              "RelativeToolTip": "UsersWebApi_Module3\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T08:07:17.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApi_Module3\\Models\\User.cs",
+              "RelativeDocumentMoniker": "UsersWebApi_Module3\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApi_Module3\\Models\\User.cs",
+              "RelativeToolTip": "UsersWebApi_Module3\\Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T08:05:28.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApi_Module3\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "UsersWebApi_Module3\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApi_Module3\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "UsersWebApi_Module3\\Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAEAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T08:05:11.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApi_Module3\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "UsersWebApi_Module3\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApi_Module3\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "UsersWebApi_Module3\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACMAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T08:04:50.18Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 455,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 455,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

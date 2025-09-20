@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\UsersWebApi_Module3.props" />
+</Project>
