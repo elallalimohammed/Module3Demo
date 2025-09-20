@@ -42,4 +42,5 @@ namespace UsersWebApiTest_Module3
             Assert.AreEqual(1, context.Users.Count());
             Assert.AreEqual("testuser", context.Users.First().Username);
         }
+    }
 }
