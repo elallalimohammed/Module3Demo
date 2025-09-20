@@ -42,3 +42,4 @@ C:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApi_Module3\obj\Debug\net
 C:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApi_Module3\obj\Debug\net8.0\UsersWebApi_Module3.pdb
 C:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApi_Module3\obj\Debug\net8.0\UsersWebApi_Module3.genruntimeconfig.cache
 C:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApi_Module3\obj\Debug\net8.0\ref\UsersWebApi_Module3.dll
+c:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApi_Module3\obj\Debug\net8.0\UsersWebApi_Module3.sourcelink.json
