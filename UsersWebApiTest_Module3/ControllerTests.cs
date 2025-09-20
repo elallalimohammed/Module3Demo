@@ -1,7 +1,10 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting; // MSTest attributes & assertions
+using Microsoft.AspNetCore.Mvc;                     // IActionResult, OkObjectResult, BadRequestObjectResult
+using Microsoft.EntityFrameworkCore;                // UseInMemoryDatabase, DbContextOptionsBuilder
+using System.Linq;                                  // LINQ methods like .Any(), .First(), .Count()
+using UsersApi.Data;                                // Namespace for AppDbContext
+using UsersApi.Controllers;                         // Namespace for UserController
+using UsersApi.Models;                              // Namespace for User and UserDto
 
 namespace UsersWebApiTest_Module3
 {
