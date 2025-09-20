@@ -2,7 +2,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting; // MSTest attributes & asser
 using Microsoft.AspNetCore.Mvc;                     // IActionResult, OkObjectResult, BadRequestObjectResult
 using Microsoft.EntityFrameworkCore;                // UseInMemoryDatabase, DbContextOptionsBuilder
 using System.Linq;                                  // LINQ methods like .Any(), .First(), .Count()
-                           // Namespace for User and UserDto
+using UsersWebApi_Module3.Data;
+using UsersWebApi_Module3.Controllers;
+using UsersWebApi_Module3.Models;                           // Namespace for User and UserDto
 
 namespace UsersWebApiTest_Module3
 {
@@ -23,7 +25,7 @@ namespace UsersWebApiTest_Module3
         {
             // Arrange
             var context = GetInMemoryDbContext();
-            var controller = new UserController(context);
+            var controller = new   AuthController(context);
 
             var newUser = new UserDto
             {

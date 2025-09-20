@@ -133,3 +133,4 @@ c:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApiTest_Module3\obj\Debug
 c:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApiTest_Module3\obj\Debug\net8.0\UsersWebApiTest_Module3.pdb
 c:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApiTest_Module3\obj\Debug\net8.0\UsersWebApiTest_Module3.genruntimeconfig.cache
 c:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApiTest_Module3\obj\Debug\net8.0\ref\UsersWebApiTest_Module3.dll
+c:\Users\moal\source\repos\UsersWebApi_Module3\UsersWebApiTest_Module3\obj\Debug\net8.0\UsersWebApiTest_Module3.sourcelink.json
