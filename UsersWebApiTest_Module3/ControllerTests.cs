@@ -19,7 +19,7 @@ namespace UsersWebApiTest_Module3
 
             return new AppDbContext(options);
         }
-
+//
         [TestMethod]
         public void Register_NewUser_ReturnsOk()
         {
