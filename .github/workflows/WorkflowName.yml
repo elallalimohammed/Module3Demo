@@ -5,7 +5,9 @@ name: .NET
 
 on:
   push:
-    branches: [ "register_controller-Test" ]
+   branches: 
+    - "register_controller-Test"
+    - "develop"
   pull_request:
     branches: [ "develop" ]
 
