@@ -33,7 +33,7 @@ namespace UsersWebApiTest_Module3
                 Password = "password123"
             };
 
-            // Act
+            //   Act
             IActionResult result = controller.Register(newUser);
 
             // Assert

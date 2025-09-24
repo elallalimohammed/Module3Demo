@@ -88,3 +88,5 @@ c:\Users\moal\Desktop\MyDemoModule3\UsersWebApi_Module3\obj\Debug\net8.0\scopedc
 c:\Users\moal\Desktop\MyDemoModule3\UsersWebApi_Module3\obj\Debug\net8.0\UsersWeb.F75D4E23.Up2Date
 c:\Users\moal\Desktop\MyDemoModule3\UsersWebApi_Module3\obj\Debug\net8.0\UsersWebApi_Module3.genruntimeconfig.cache
 c:\Users\moal\Desktop\MyDemoModule3\UsersWebApi_Module3\obj\Debug\net8.0\ref\UsersWebApi_Module3.dll
+c:\Users\moal\Desktop\MyDemoModule3\UsersWebApi_Module3\bin\Debug\net8.0\Castle.Core.dll
+c:\Users\moal\Desktop\MyDemoModule3\UsersWebApi_Module3\bin\Debug\net8.0\Moq.dll
