@@ -17,11 +17,21 @@ namespace UsersWebApiTest_Module3
         [TestInitialize]
         public void Setup()
         {
-            _mockUserSet = new Mock<DbSet<User>>();
+            // Sample in-memory user list
+            var users = new List<User>().AsQueryable();
 
+            // Mock DbSet
+            _mockUserSet = new Mock<DbSet<User>>();
+            _mockUserSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(users.Provider);
+            _mockUserSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(users.Expression);
+            _mockUserSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(users.ElementType);
+            _mockUserSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
+
+            // Mock AppDbContext
             _mockContext = new Mock<AppDbContext>();
             _mockContext.Setup(c => c.Users).Returns(_mockUserSet.Object);
 
+            // Initialize controller
             _controller = new AuthController(_mockContext.Object);
         }
 
