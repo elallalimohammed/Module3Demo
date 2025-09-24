@@ -270,3 +270,5 @@ c:\Users\moal\Desktop\MyDemoModule3\UsersWebApiTest_Module3\obj\Debug\net8.0\Use
 c:\Users\moal\Desktop\MyDemoModule3\UsersWebApiTest_Module3\obj\Debug\net8.0\UsersWeb.735DA4F2.Up2Date
 c:\Users\moal\Desktop\MyDemoModule3\UsersWebApiTest_Module3\obj\Debug\net8.0\UsersWebApiTest_Module3.genruntimeconfig.cache
 c:\Users\moal\Desktop\MyDemoModule3\UsersWebApiTest_Module3\obj\Debug\net8.0\ref\UsersWebApiTest_Module3.dll
+c:\Users\moal\Desktop\MyDemoModule3\UsersWebApiTest_Module3\bin\Debug\net8.0\Castle.Core.dll
+c:\Users\moal\Desktop\MyDemoModule3\UsersWebApiTest_Module3\bin\Debug\net8.0\Moq.dll
