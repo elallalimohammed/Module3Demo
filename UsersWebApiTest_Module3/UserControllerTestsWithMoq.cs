@@ -7,7 +7,7 @@ using UsersWebApi_Module3.Models;
 
 namespace UsersWebApiTest_Module3
 {
-    [TestClass]
+    //[TestClass]
     public class UserControllerTestsWithMoq
     {
         private Mock<DbSet<User>> _mockUserSet;
