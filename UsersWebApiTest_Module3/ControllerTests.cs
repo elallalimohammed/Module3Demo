@@ -41,7 +41,7 @@ namespace UsersWebApiTest_Module3
             Assert.IsNotNull(okResult);
             Assert.AreEqual("User registered successfully", okResult.Value);
 
-            // Ensure the user was added to the database
+            // Ensure the user was added to the DB
             Assert.AreEqual(1, context.Users.Count());
             Assert.AreEqual("testuser", context.Users.First().Username);
         }
