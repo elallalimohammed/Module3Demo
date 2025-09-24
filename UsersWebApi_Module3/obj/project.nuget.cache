@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o5BFnsgh/lk=",
+  "dgSpecHash": "6wpVibzOtWg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\moal\\source\\repos\\UsersWebApi_Module3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj",
+  "projectFilePath": "c:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moal\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.9\\microsoft.entityframeworkcore.9.0.9.nupkg.sha512",
     "C:\\Users\\moal\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.9\\microsoft.entityframeworkcore.abstractions.9.0.9.nupkg.sha512",
