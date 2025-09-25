@@ -10,55 +10,35 @@ namespace UsersWebApiTest_Module3
     [TestClass]
     public class UserControllerTestsWithMoq
     {
-        private Mock<DbSet<User>> _mockUserSet;
-        private Mock<AppDbContext> _mockContext;
-        private AuthController _controller;
 
-        [TestInitialize]
-        public void Setup()
+    [TestMethod]
+    public void GetAll_ReturnsOkResult_WithUsers()
+    {
+        // Arrange
+        var mockRepo = new Mock<AuthController.IRepository<User>>();
+        var users = new List<User>
         {
-            // Sample in-memory user list
-            var users = new List<User>().AsQueryable();
+            new User { Id = 1, Username = "Alice" },
+            new User { Id = 2, Username = "Bob" }
+        };
 
-            // Mock DbSet
-            _mockUserSet = new Mock<DbSet<User>>();
-            _mockUserSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(users.Provider);
-            _mockUserSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(users.Expression);
-            _mockUserSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(users.ElementType);
-            _mockUserSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
+        mockRepo.Setup(r => r.GetAll()).Returns(users);
 
-            // Mock AppDbContext
-            _mockContext = new Mock<AppDbContext>();
-            _mockContext.Setup(c => c.Users).Returns(_mockUserSet.Object);
+        var controller = new AuthController(mockRepo.Object);
 
-            // Initialize controller
-            _controller = new AuthController(_mockContext.Object);
-        }
+        // Act
+        var result = controller.GetAll().Result; // since GetAll is async
+        var okResult = result as OkObjectResult;
 
+        // Assert
+        Assert.IsNotNull(okResult);
+        Assert.AreEqual(200, okResult.StatusCode);
 
-        [TestMethod]
-        public void Register_ShouldAddUserAndReturnOk_WhenUsernameIsNew()
-        {
-            // Arrange
-            var emptyUsers = new List<User>().AsQueryable();
-
-            _mockUserSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(emptyUsers.Provider);
-            _mockUserSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(emptyUsers.Expression);
-            _mockUserSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(emptyUsers.ElementType);
-            _mockUserSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(emptyUsers.GetEnumerator());
-
-            var dto = new UserDto { Username = "newuser", Password = "pass" };
-
-            // Act
-            var result = _controller.Register(dto);
-
-            // Assert
-            _mockUserSet.Verify(m => m.Add(It.Is<User>(u => u.Username == "newuser")), Times.Once);
-            _mockContext.Verify(c => c.SaveChanges(), Times.Once);
-
-            var okResult = result as OkObjectResult;
-            Assert.IsNotNull(okResult);
-            Assert.AreEqual("User registered successfully", okResult.Value);
-        }
+        var returnedUsers = okResult.Value as IEnumerable<User>;
+        Assert.IsNotNull(returnedUsers);
+        Assert.AreEqual(2, returnedUsers.Count());
+        Assert.AreEqual("Alice", returnedUsers.First().Username);
+    }
+}
     }
 }

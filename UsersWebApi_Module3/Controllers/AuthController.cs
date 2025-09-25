@@ -9,45 +9,84 @@ namespace UsersWebApi_Module3.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly IRepository<User> _repo;
 
-        public AuthController(AppDbContext context)
+        public AuthController(IRepository<User> repository)
         {
-            _context = context;
+            _repo = repository;
         }
 
-        
-        // 🔹 Register endpoint
-        [HttpPost("register")]
-        public IActionResult Register([FromBody] UserDto userDto)
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
-            if (_context.Users.Any(u => u.Username == userDto.Username))
-                return BadRequest("Username already exists");
+            var users = _repo.GetAll();
+            return Ok(users); // <-- This returns an OkObjectResult
+        }
 
-            var user = new User
+
+        public class UserRepository : IRepository<User>
+        {
+            private readonly List<User> _users = new();
+
+            public User GetById(int id) => _users.FirstOrDefault(u => u.Id == id)!;
+
+            public IEnumerable<User> GetAll() => _users;
+
+            public void Add(User entity) => _users.Add(entity);
+
+            public bool UsernameExists(string username)
             {
-                Username = userDto.Username,
-                Password = userDto.Password   // ❌ plain text, but simple for now
-            };
-
-            _context.Users.Add(user);
-            _context.SaveChanges();
-
-            return Ok("User registered successfully");
+                return _users.Any(u => u.Username == username);
+            }
         }
-
-        // 🔹 Login endpoint
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] UserDto userDto)
+        
+        public interface IRepository<T>
         {
-            var user = _context.Users
-                .SingleOrDefault(u => u.Username == userDto.Username && u.Password == userDto.Password);
-
-            if (user == null)
-                return Unauthorized("Invalid username or password");
-
-            return Ok("Login successful");
+            T GetById(int id);
+            IEnumerable<T> GetAll();
+            void Add(T entity);
         }
+ 
+
+       /* private readonly AppDbContext _context;
+
+                public AuthController(AppDbContext context)
+                {
+                    _context = context;
+                }
+
+
+                // 🔹 Register endpoint
+                [HttpPost("register")]
+                public IActionResult Register([FromBody] UserDto userDto)
+                {
+                    if (_context.Users.Any(u => u.Username == userDto.Username))
+                        return BadRequest("Username already exists");
+
+                    var user = new User
+                    {
+                        Username = userDto.Username,
+                        Password = userDto.Password   // ❌ plain text, but simple for now
+                    };
+
+                    _context.Users.Add(user);
+                    _context.SaveChanges();
+
+                    return Ok("User registered successfully");
+                }
+
+                // 🔹 Login endpoint
+                [HttpPost("login")]
+                public IActionResult Login([FromBody] UserDto userDto)
+                {
+                    var user = _context.Users
+                        .SingleOrDefault(u => u.Username == userDto.Username && u.Password == userDto.Password);
+
+                    if (user == null)
+                        return Unauthorized("Invalid username or password");
+
+                    return Ok("Login successful");
+                }*/
     }
 }
 
