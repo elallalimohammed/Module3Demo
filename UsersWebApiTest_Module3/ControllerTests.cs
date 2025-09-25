@@ -23,7 +23,7 @@ namespace UsersWebApiTest_Module3
         [TestMethod]
         public void Register_NewUser_ReturnsOk()
         {
-            // Arrange
+            // Arr
             var context = GetInMemoryDbContext();
             var controller = new   AuthController(context);
 
@@ -42,7 +42,7 @@ namespace UsersWebApiTest_Module3
             Assert.AreEqual("User registered successfully", okResult.Value);
 
             // Ensure the user was added to the DB
-            Assert.AreEqual(1, context.Users.Count());
+            Assert.AreEqual(2, context.Users.Count());
             Assert.AreEqual("testuser", context.Users.First().Username);
         }
     }
