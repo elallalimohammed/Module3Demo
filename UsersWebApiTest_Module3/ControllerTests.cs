@@ -23,7 +23,7 @@ namespace UsersWebApiTest_Module3
         [TestMethod]
         public void Register_NewUser_ReturnsOk()
         {
-            // Arrange
+            // Arr
             var context = GetInMemoryDbContext();
             var controller = new   AuthController(context);
 
