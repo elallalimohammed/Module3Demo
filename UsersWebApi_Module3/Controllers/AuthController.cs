@@ -23,6 +23,13 @@ namespace UsersWebApi_Module3.Controllers
             return Ok(users); // <-- This returns an OkObjectResult
         }
 
+        [HttpPost]
+            public IActionResult Add(User user)
+            {
+                _repo.Add(user);
+                return CreatedAtAction(nameof(GetAll), new { id = user.Id }, user);
+            }
+
 
         public class UserRepository : IRepository<User>
         {

@@ -42,27 +42,53 @@ namespace UsersWebApiTest_Module3
 
 
         [TestMethod]
-public void GetAll_ReturnsOkResult_WithEmptyList_WhenNoUsersExist()
-{
-    // Arrange
-    var mockRepo = new Mock<AuthController.IRepository<User>>();
-    var emptyUsers = new List<User>();
+        public void GetAll_ReturnsOkResult_WithEmptyList_WhenNoUsersExist()
+        {
+            // Arrange
+            var mockRepo = new Mock<AuthController.IRepository<User>>();
+            var emptyUsers = new List<User>();
 
-    mockRepo.Setup(r => r.GetAll()).Returns(emptyUsers);
+            mockRepo.Setup(r => r.GetAll()).Returns(emptyUsers);
 
-    var controller = new AuthController(mockRepo.Object);
+            var controller = new AuthController(mockRepo.Object);
 
-    // Act
-    var result = controller.GetAll().Result; 
-    var okResult = result as OkObjectResult;
+            // Act
+            var result = controller.GetAll().Result;
+            var okResult = result as OkObjectResult;
 
-    // Assert
-    Assert.IsNotNull(okResult);
-    Assert.AreEqual(200, okResult.StatusCode);
+            // Assert
+            Assert.IsNotNull(okResult);
+            Assert.AreEqual(200, okResult.StatusCode);
 
-    var returnedUsers = okResult.Value as IEnumerable<User>;
-    Assert.IsNotNull(returnedUsers);
-    Assert.AreEqual(0, returnedUsers.Count());
-}
+            var returnedUsers = okResult.Value as IEnumerable<User>;
+            Assert.IsNotNull(returnedUsers);
+            Assert.AreEqual(0, returnedUsers.Count());
+        }
+
+        [TestMethod]
+        public void Add_CallsRepositoryAdd_AndReturnsCreatedResult()
+        {
+            // Arrange
+            var mockRepo = new Mock<AuthController.IRepository<User>>();
+            var controller = new AuthController(mockRepo.Object);
+            var newUser = new User { Id = 3, Username = "Charlie" };
+
+            // Act
+            var result = controller.Add(newUser);
+            var createdResult = result as CreatedAtActionResult;
+
+            // Assert
+            // Verify repository Add was called exactly once with our user
+            mockRepo.Verify(r => r.Add(It.Is<User>(u => u.Id == 3 && u.Username == "Charlie")), Times.Once);
+
+            // Verify controller returned CreatedAtActionResult
+            Assert.IsNotNull(createdResult);
+            Assert.AreEqual(201, createdResult.StatusCode);
+
+            // Verify the returned value is the same user
+            var returnedUser = createdResult.Value as User;
+            Assert.IsNotNull(returnedUser);
+            Assert.AreEqual("Charlie", returnedUser.Username);
+        }
     }
 }
