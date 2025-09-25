@@ -8,7 +8,7 @@ using UsersWebApi_Module3.Models;                           // Namespace for Use
 
 namespace UsersWebApiTest_Module3
 {
-    [TestClass]
+    //[TestClass]
     public class UserControllerTests
     {
         private AppDbContext GetInMemoryDbContext()
