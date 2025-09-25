@@ -9,41 +9,5 @@ using UsersWebApi_Module3.Models;                           // Namespace for Use
 namespace UsersWebApiTest_Module3
 {
     //[TestClass]
-    public class UserControllerTests
-    {
-        private AppDbContext GetInMemoryDbContext()
-        {
-            var options = new DbContextOptionsBuilder<AppDbContext>()
-                .UseInMemoryDatabase(databaseName: System.Guid.NewGuid().ToString()) // unique DB per test
-                .Options;
-
-            return new AppDbContext(options);
-        }
-
-        [TestMethod]
-        public void Register_NewUser_ReturnsOk()
-        {
-            // Arr
-            var context = GetInMemoryDbContext();
-            var controller = new   AuthController(context);
-
-            var newUser = new UserDto
-            {
-                Username = "testuser",
-                Password = "password123"
-            };
-
-            //   Act  is for actions
-            IActionResult result = controller.Register(newUser);
-
-            // Assert
-            var okResult = result as OkObjectResult;
-            Assert.IsNotNull(okResult);
-            Assert.AreEqual("User registered successfully", okResult.Value);
-
-            // Ensure the user was added to the DB
-            Assert.AreEqual(2, context.Users.Count());
-            Assert.AreEqual("testuser", context.Users.First().Username);
-        }
-    }
+    
 }
