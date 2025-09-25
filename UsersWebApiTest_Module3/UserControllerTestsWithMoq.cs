@@ -90,5 +90,24 @@ namespace UsersWebApiTest_Module3
             Assert.IsNotNull(returnedUser);
             Assert.AreEqual("Charlie", returnedUser.Username);
         }
+        [TestMethod]
+        public void Add_ReturnsBadRequest_WhenUserIsNull()
+        {
+            // Arrange
+            var mockRepo = new Mock<AuthController.IRepository<User>>();
+            var controller = new AuthController(mockRepo.Object);
+
+            // Act
+            var result = controller.Add(null);
+            var badRequestResult = result as BadRequestObjectResult;
+
+            // Assert
+            Assert.IsNotNull(badRequestResult);
+            Assert.AreEqual(400, badRequestResult.StatusCode);
+            Assert.AreEqual("User cannot be null", badRequestResult.Value);
+
+            // Verify Add was never called
+            mockRepo.Verify(r => r.Add(It.IsAny<User>()), Times.Never);
+        }
     }
 }

@@ -26,6 +26,10 @@ namespace UsersWebApi_Module3.Controllers
         [HttpPost]
             public IActionResult Add(User user)
             {
+                if (user == null)
+                {
+                    return BadRequest("User cannot be null");
+                }
                 _repo.Add(user);
                 return CreatedAtAction(nameof(GetAll), new { id = user.Id }, user);
             }
