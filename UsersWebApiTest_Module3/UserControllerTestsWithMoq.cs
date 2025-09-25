@@ -41,4 +41,3 @@ namespace UsersWebApiTest_Module3
     }
 }
     }
-}
