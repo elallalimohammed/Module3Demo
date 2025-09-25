@@ -34,10 +34,10 @@ namespace UsersWebApiTest_Module3
         Assert.IsNotNull(okResult);
         Assert.AreEqual(200, okResult.StatusCode);
 
-       // var returnedUsers = okResult.Value as IEnumerable<User>;
-        //Assert.IsNotNull(returnedUsers);
-        //Assert.AreEqual(2, returnedUsers.Count());
-       // Assert.AreEqual("Alice", returnedUsers.First().Username);
+        var returnedUsers = okResult.Value as IEnumerable<User>;
+        Assert.IsNotNull(returnedUsers);
+        Assert.AreEqual(2, returnedUsers.Count());
+       Assert.AreEqual("Alice", returnedUsers.First().Username);
     }
 }
     }
