@@ -16,7 +16,7 @@ namespace UsersWebApi_Module3.Controllers
             _repo = repository;
         }
 
-        [HttpGet("hello")]
+        [HttpGet("users")]
         public async Task<IActionResult> GetAll()
         {
             var users = _repo.GetAll();
