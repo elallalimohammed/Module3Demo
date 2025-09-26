@@ -2190,11 +2190,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApiTest_Module3\\UsersWebApiTest_Module3.csproj",
+      "projectUniqueName": "C:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApiTest_Module3\\UsersWebApiTest_Module3.csproj",
       "projectName": "UsersWebApiTest_Module3",
-      "projectPath": "c:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApiTest_Module3\\UsersWebApiTest_Module3.csproj",
+      "projectPath": "C:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApiTest_Module3\\UsersWebApiTest_Module3.csproj",
       "packagesPath": "C:\\Users\\moal\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApiTest_Module3\\obj\\",
+      "outputPath": "C:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApiTest_Module3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2216,8 +2216,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj": {
-              "projectPath": "c:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj"
+            "C:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj": {
+              "projectPath": "C:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj"
             }
           }
         }
