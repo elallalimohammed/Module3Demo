@@ -6,7 +6,7 @@ using static UsersWebApi_Module3.Controllers.AuthController;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
-builder.Services.AddScoped<IRepository<User>, UserRepository>();
+builder.Services.AddSingleton<IRepository<User>, UserRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
