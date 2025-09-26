@@ -16,14 +16,14 @@ namespace UsersWebApi_Module3.Controllers
             _repo = repository;
         }
 
-        [HttpGet]
+        [HttpGet("hello")]
         public async Task<IActionResult> GetAll()
         {
             var users = _repo.GetAll();
             return Ok(users); // <-- This returns an OkObjectResult
         }
 
-        [HttpPost]
+        [HttpPost("create")]
             public IActionResult Add(User user)
             {
                 if (user == null)
