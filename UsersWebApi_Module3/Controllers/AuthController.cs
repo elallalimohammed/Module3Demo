@@ -37,8 +37,13 @@ namespace UsersWebApi_Module3.Controllers
 
         public class UserRepository : IRepository<User>
         {
-            private readonly List<User> _users = new();
+            //private readonly List<User> _users = new();
+            private readonly List<User> _users = new List<User>(){
+                new User { Id = 1, Username = "Alice", Password = "password1" },
+                new User { Id = 2, Username = "Bob", Password = "password2" }
+            };
 
+          
             public User GetById(int id) => _users.FirstOrDefault(u => u.Id == id)!;
 
             public IEnumerable<User> GetAll() => _users;
