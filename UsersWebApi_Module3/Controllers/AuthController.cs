@@ -17,23 +17,46 @@ namespace UsersWebApi_Module3.Controllers
         }
 
         [HttpGet("users")]
-        public async Task<IActionResult> GetAll()
+    public async Task<IActionResult> GetAll()
+    {
+        try
         {
             var users = _repo.GetAll();
-            return Ok(users); // <-- This returns an OkObjectResult
+            return Ok(users); // <-- Returns an OkObjectResult
         }
+        catch (Exception ex)
+        {
+            // Log exception here if needed
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
 
-        [HttpPost("create")]
-            public IActionResult Add(User user)
+    [HttpPost("create")]
+    public IActionResult Add(User user)
+    {
+        try
+        {
+            if (user == null)
             {
-                if (user == null)
-                {
-                    return BadRequest("User cannot be null");
-                }
-                _repo.Add(user);
-                return CreatedAtAction(nameof(GetAll), new { id = user.Id }, user);
+                return BadRequest("User cannot be null");
             }
 
+            _repo.Add(user);
+            return CreatedAtAction(nameof(GetAll), new { id = user.Id }, user);
+        }
+        catch (Exception ex)
+        {
+            // Log exception here if needed
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    // Optional endpoint to deliberately throw an exception for testing
+    [HttpGet("throw-exception")]
+    public IActionResult ThrowException()
+    {
+        throw new InvalidOperationException("This is a test exception");
+    }
 
         public class UserRepository : IRepository<User>
         {
