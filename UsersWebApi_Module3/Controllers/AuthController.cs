@@ -33,6 +33,24 @@ namespace UsersWebApi_Module3.Controllers
         }
     }
 
+    // ----------- New GetById() -----------
+        public async Task<IActionResult> GetById(int id)
+        {
+            try
+            {
+                var user = _repo.GetById(id);
+
+                if (user == null)
+                    return NotFound($"User with ID {id} not found");
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
     [HttpPost("create")]
     public IActionResult Add(User user)
     {
@@ -52,9 +70,48 @@ namespace UsersWebApi_Module3.Controllers
             return StatusCode(500, $"Internal server error: {ex.Message}");
         }
     }
+    
+    // --------- Login endpoint ---------
+        [HttpPost]
+        public async Task<IActionResult> Login(string username, string password)
+        {
+            try
+            {
+                var user = _repo.GetByUsername(username);
+                if (user == null || user.Password != password)
+                    return Unauthorized("Invalid username or password");
+
+                // Normally you would generate a JWT token here
+                return Ok(new { user.Id, user.Username, Message = "Login successful" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+// -------- GetUserByUsername --------
+        [HttpGet("{username}")]
+        public async Task<IActionResult> GetByUsername(string username)
+        {
+            try
+            {
+                var user = _repo.GetByUsername(username);
+
+                if (user == null)
+                    return NotFound($"User with username '{username}' not found");
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
 
     // Optional endpoint to deliberately throw an exception for testing
-    [HttpGet("throw-exception")]
+        [HttpGet("throw-exception")]
     public IActionResult ThrowException()
     {
         throw new InvalidOperationException("This is a test exception");
@@ -71,6 +128,8 @@ namespace UsersWebApi_Module3.Controllers
           
             public User GetById(int id) => _users.FirstOrDefault(u => u.Id == id)!;
 
+             public User GetByUsername(string username) => _users.FirstOrDefault(u => u.Username == username)!;
+
             public IEnumerable<User> GetAll() => _users;
 
             public void Add(User entity) => _users.Add(entity);
@@ -80,12 +139,13 @@ namespace UsersWebApi_Module3.Controllers
                 return _users.Any(u => u.Username == username);
             }
         }
-        
+
         public interface IRepository<T>
         {
             T GetById(int id);
             IEnumerable<T> GetAll();
             void Add(T entity);
+            User GetByUsername(string username);
         }
     }
 }
