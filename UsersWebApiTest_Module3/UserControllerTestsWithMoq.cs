@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Moq;
@@ -195,7 +196,7 @@ namespace UsersWebApiTest_Module3
 
             // Edge case: GetAll returns null (simulating repository returning null instead of empty list)
             [TestMethod]
-            public void GetAll_ReturnsInternalServerError_WhenRepositoryReturnsNull()
+            public async Task GetAll_ReturnsInternalServerError_WhenRepositoryReturnsNull()
             {
                 // Arrange
                 var mockRepo = new Mock<AuthController.IRepository<User>>();
@@ -204,7 +205,7 @@ namespace UsersWebApiTest_Module3
                 var controller = new AuthController(mockRepo.Object);
 
                 // Act
-                var result = controller.GetAll().Result;
+                var result = await controller.GetAll();
                 var statusResult = result as ObjectResult;
 
                 // Assert
