@@ -63,7 +63,26 @@ namespace UsersWebApiTest_Module3
             var returnedUsers = okResult.Value as IEnumerable<User>;
             Assert.IsNotNull(returnedUsers);
             Assert.AreEqual(0, returnedUsers.Count());
-        }
+        } // Test for exception in GetAll
+            [TestMethod]
+            public void GetAll_ReturnsInternalServerError_WhenExceptionThrown()
+            {
+                // Arrange
+                var mockRepo = new Mock<AuthController.IRepository<User>>();
+                mockRepo.Setup(r => r.GetAll()).Throws(new Exception("Database error"));
+
+                var controller = new AuthController(mockRepo.Object);
+
+                // Act
+                var result = controller.GetAll().Result;
+                var statusResult = result as ObjectResult;
+
+                // Assert
+                Assert.IsNotNull(statusResult);
+                Assert.AreEqual(500, statusResult.StatusCode);
+                StringAssert.Contains(statusResult.Value.ToString(), "Database error");
+            }
+
 
         [TestMethod]
         public void Add_CallsRepositoryAdd_AndReturnsCreatedResult()
@@ -111,29 +130,8 @@ namespace UsersWebApiTest_Module3
         }
 
 
-        [TestClass]
-        public class AuthControllerTests
-        {
-            // Test for exception in GetAll
-            [TestMethod]
-            public void GetAll_ReturnsInternalServerError_WhenExceptionThrown()
-            {
-                // Arrange
-                var mockRepo = new Mock<AuthController.IRepository<User>>();
-                mockRepo.Setup(r => r.GetAll()).Throws(new Exception("Database error"));
-
-                var controller = new AuthController(mockRepo.Object);
-
-                // Act
-                var result = controller.GetAll().Result;
-                var statusResult = result as ObjectResult;
-
-                // Assert
-                Assert.IsNotNull(statusResult);
-                Assert.AreEqual(500, statusResult.StatusCode);
-                StringAssert.Contains(statusResult.Value.ToString(), "Database error");
-            }
-
+        
+           
             // Test for exception in Add
             [TestMethod]
             public void Add_ReturnsInternalServerError_WhenExceptionThrown()
@@ -213,100 +211,20 @@ namespace UsersWebApiTest_Module3
                 Assert.IsNotNull(statusResult);
                 Assert.AreEqual(500, statusResult.StatusCode);
             }
-            [TestClass]
-            public class AuthControllerTests
+
+                       
+
+
+            [TestMethod]
+            public void ThrowExceptionEndpoint_ThrowsInvalidOperationException()
             {
-                [TestMethod]
-                public async Task GetAll_ReturnsOkResult_WithUsers()
-                {
-                    // Arrange
-                    var mockRepo = new Mock<AuthController.IRepository<User>>();
-                    var users = new List<User>
-        {
-            new User { Id = 1, Username = "Alice" },
-            new User { Id = 2, Username = "Bob" }
-        };
-                    mockRepo.Setup(r => r.GetAll()).Returns(users);
+                var controller = new AuthController(new Mock<AuthController.IRepository<User>>().Object);
 
-                    var controller = new AuthController(mockRepo.Object);
-
-                    // Act
-                    var result = await controller.GetAll();
-                    var okResult = result as OkObjectResult;
-
-                    // Assert
-                    Assert.IsNotNull(okResult);
-                    Assert.AreEqual(200, okResult.StatusCode);
-
-                    var returnedUsers = okResult.Value as IEnumerable<User>;
-                    Assert.IsNotNull(returnedUsers);
-                    Assert.AreEqual(2, returnedUsers.Count());
-                }
-
-                [TestMethod]
-                public async Task GetAll_ReturnsOkResult_WithEmptyList_WhenNoUsersExist()
-                {
-                    var mockRepo = new Mock<AuthController.IRepository<User>>();
-                    mockRepo.Setup(r => r.GetAll()).Returns(new List<User>());
-
-                    var controller = new AuthController(mockRepo.Object);
-
-                    var result = await controller.GetAll();
-                    var okResult = result as OkObjectResult;
-
-                    Assert.IsNotNull(okResult);
-                    Assert.AreEqual(200, okResult.StatusCode);
-
-                    var returnedUsers = okResult.Value as IEnumerable<User>;
-                    Assert.IsNotNull(returnedUsers);
-                    Assert.AreEqual(0, returnedUsers.Count());
-                }
-
-                [TestMethod]
-                public async Task GetAll_ReturnsInternalServerError_WhenExceptionThrown()
-                {
-                    var mockRepo = new Mock<AuthController.IRepository<User>>();
-                    mockRepo.Setup(r => r.GetAll()).Throws(new Exception("Database error"));
-
-                    var controller = new AuthController(mockRepo.Object);
-
-                    var result = await controller.GetAll();
-                    var statusResult = result as ObjectResult;
-
-                    Assert.IsNotNull(statusResult);
-                    Assert.AreEqual(500, statusResult.StatusCode);
-                    StringAssert.Contains(statusResult.Value.ToString(), "Database error");
-                }
-
-                
-                [TestMethod]
-                public async Task GetAll_ReturnsInternalServerError_WhenRepositoryReturnsNull()
-                {
-                    var mockRepo = new Mock<AuthController.IRepository<User>>();
-                    mockRepo.Setup(r => r.GetAll()).Returns((IEnumerable<User>)null);
-
-                    var controller = new AuthController(mockRepo.Object);
-
-                    var result = await controller.GetAll();
-                    var statusResult = result as ObjectResult;
-
-                    Assert.IsNotNull(statusResult);
-                    Assert.AreEqual(500, statusResult.StatusCode);
-                }
-
-                
-
-                
-                [TestMethod]
-                public void ThrowExceptionEndpoint_ThrowsInvalidOperationException()
-                {
-                    var controller = new AuthController(new Mock<AuthController.IRepository<User>>().Object);
-
-                    Assert.ThrowsException<InvalidOperationException>(() => controller.ThrowException());
-                }
-
-                
+                Assert.ThrowsException<InvalidOperationException>(() => controller.ThrowException());
             }
+
+
         }
     }
-}
+
+
