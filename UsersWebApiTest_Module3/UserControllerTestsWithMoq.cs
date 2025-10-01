@@ -110,10 +110,7 @@ namespace UsersWebApiTest_Module3
             Assert.IsNotNull(statusResult);
             Assert.AreEqual(500, statusResult.StatusCode);
         }
-        // Testing GetById method
-        [TestClass]
-        public class AuthControllerGetByIdTests
-        {
+        
             [TestMethod]
             public async Task GetById_ReturnsOk_WhenUserExists()
             {
@@ -387,7 +384,7 @@ namespace UsersWebApiTest_Module3
         }
 
 
-        }
+        
     }
 }
 
