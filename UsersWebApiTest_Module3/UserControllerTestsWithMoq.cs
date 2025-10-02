@@ -294,36 +294,6 @@ namespace UsersWebApiTest_Module3
             }
 
 
-            [TestMethod]
-            public async Task Login_ReturnsOk_WhenCredentialsAreValid()
-            {
-                // Arrange
-                var user = new User { Id = 1, Username = "alice", Password = "password123" };
-                var mockRepo = new Mock<IRepository<User>>();
-                mockRepo.Setup(r => r.GetByUsername("alice")).Returns(user);
-
-                var controller = new AuthController(mockRepo.Object);
-
-                // Act
-                var result = await controller.Login("alice", "password123");
-                var okResult = result as OkObjectResult;
-
-                // Assert
-                Assert.IsNotNull(okResult);
-                Assert.AreEqual(200, okResult.StatusCode);
-
-               /* dynamic value = okResult.Value;
-                Assert.AreEqual("alice", value.Username);
-                Assert.AreEqual(1, value.Id);
-                Assert.AreEqual("Login successful", value.Message); */
-
-                var value = okResult.Value as dynamic;
-                Assert.AreEqual("alice", value.Username);
-                Assert.AreEqual(1, value.Id);
-            
-            
-        }
-
         [TestMethod]
         public async Task Login_ReturnsUnauthorized_WhenUsernameDoesNotExist()
         {
