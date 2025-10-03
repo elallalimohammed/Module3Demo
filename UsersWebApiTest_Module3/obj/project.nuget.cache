@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "BZhfowPC9SQ=",
+=======
+  "dgSpecHash": "Xv1YHM2RxvE=",
+>>>>>>> 0347ebe (commit pull)
   "success": true,
   "projectFilePath": "C:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApiTest_Module3\\UsersWebApiTest_Module3.csproj",
   "expectedPackageFiles": [
