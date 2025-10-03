@@ -13,7 +13,6 @@ namespace UsersWebApiTest_Module3
     public class UserControllerTestsWithMoq
     {
 
-
         // Test for GetAll method 
 
         // Testing successful retrieval of users  
