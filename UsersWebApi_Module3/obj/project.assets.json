@@ -1185,11 +1185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj",
+      "projectUniqueName": "c:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj",
       "projectName": "UsersWebApi_Module3",
-      "projectPath": "C:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj",
+      "projectPath": "c:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\UsersWebApi_Module3.csproj",
       "packagesPath": "C:\\Users\\moal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\obj\\",
+      "outputPath": "c:\\Users\\moal\\Desktop\\MyDemoModule3\\UsersWebApi_Module3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
